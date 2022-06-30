@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-from ast import operator
 from calculator_1 import add, sub, mul, div
 import sys
 if __name__ == '__main__':
