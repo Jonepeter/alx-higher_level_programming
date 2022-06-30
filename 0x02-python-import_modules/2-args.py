@@ -13,7 +13,3 @@ if __name__ == "__main__":
             print('{:d}: {}'.format(i, args[i]))
     elif len_args == 0:
         print(len_args, 'arguments.')
-
-         
-
-
