@@ -9,19 +9,19 @@ if __name__ == '__main__':
         num1 = int(argv[1])
         num2 = int(argv[3])
         operator = argv[2]
-        if (operator == '+'):
+        if operator == '+':
             result = add(num1, num2)
             print("{:d} + {:d} = {:d}".format(num1, num2, result))
             exit(0)
-        elif (operator == '-'):
+        elif operator == '-':
             result = sub(num1, num2)
             print("{:d} - {:d} = {:d}".format(num1, num2, result))
             exit(0)
-        elif (operator == '*'):
+        elif operator == '*':
             result = mul(num1, num2)
             print("{:d} * {:d} = {:d}".format(num1, num2, result))
             exit(0)
-        elif (operator == '/'):
+        elif operator == '/':
             result = int(div(num1, num2))
             print("{:d} / {:d} = {:d}".format(num1, num2, result))
             exit(0)
