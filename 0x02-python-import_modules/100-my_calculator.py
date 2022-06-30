@@ -1,13 +1,14 @@
 #!/usr/bin/python3
+from sys import argv
 from calculator_1 import add, sub, mul, div
-import sys
+
 if __name__ == '__main__':
-    args = sys.argv
-    len_args = len(args) - 1
+    len_args = len(argv) - 1
+    
     if len_args == 3:
-        num1 = int(args[1])
-        num2 = int(args[3])
-        operator = args[2]
+        num1 = int(argv[1])
+        num2 = int(argv[3])
+        operator = argv[2]
         if (operator == '+'):
             print("{:d} {} {:d} = {:d}".format(num1, operator, num2, add(num1, num2)))
             exit(0)
