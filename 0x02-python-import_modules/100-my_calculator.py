@@ -7,15 +7,19 @@ if __name__ == '__main__':
     if len_args == 3:
         if (args[2] == '+'):
             print("{} {} {} = {:d}".format(args[1], args[2], args[3], add(int(args[1]), int(args[3]))))
+            exit(0)
         elif (args[2] == '-'):
             print("{} {} {} = {:d}".format(args[1], args[2], args[3], sub(int(args[1]), int(args[3]))))
+            exit(0)
         elif (args[2] == '*'):
             print("{} {} {} = {:d}".format(args[1], args[2], args[3], mul(int(args[1]), int(args[3]))))
+            exit(0)
         elif (args[2] == '/'):
             print("{} {} {} = {:d}".format(args[1], args[2], args[3], int(div(int(args[1]), int(args[3])))))
+            exit(0)
         else:
             print("Unknown operator. Available operators: +, -, * and /")
-            print(0)
+            exit(1)
     else:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
-        print(1)
+        exit(1)
