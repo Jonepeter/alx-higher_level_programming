@@ -1,21 +1,25 @@
 #!/usr/bin/python3
+from ast import operator
 from calculator_1 import add, sub, mul, div
 import sys
 if __name__ == '__main__':
     args = sys.argv
     len_args = len(args) - 1
     if len_args == 3:
-        if (args[2] == '+'):
-            print("{} {} {} = {:d}".format(args[1], args[2], args[3], add(int(args[1]), int(args[3]))))
+        num1 = int(args[1])
+        num2 = int(args[3])
+        operator = args[2]
+        if (operator == '+'):
+            print("{:d} {} {:d} = {:d}".format(num1, operator, num2, add(num1, num2)))
             exit(0)
-        elif (args[2] == '-'):
-            print("{} {} {} = {:d}".format(args[1], args[2], args[3], sub(int(args[1]), int(args[3]))))
+        elif (operator == '-'):
+            print("{} {} {} = {:d}".format(num1, operator, num2, sub(num1, num2)))
             exit(0)
-        elif (args[2] == '*'):
-            print("{} {} {} = {:d}".format(args[1], args[2], args[3], mul(int(args[1]), int(args[3]))))
+        elif (operator == '*'):
+            print("{} {} {} = {:d}".format(num1, operator, num2, mul(num1, num2)))
             exit(0)
-        elif (args[2] == '/'):
-            print("{} {} {} = {:d}".format(args[1], args[2], args[3], int(div(int(args[1]), int(args[3])))))
+        elif (operator == '/'):
+            print("{} {} {} = {:d}".format(num1, operator, num2, int(div(num1, num2))))
             exit(0)
         else:
             print("Unknown operator. Available operators: +, -, * and /")
