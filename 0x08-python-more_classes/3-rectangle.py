@@ -1,10 +1,12 @@
 #!/usr/bin/python3
-'''Print Rectangle Using #'''
+"""Defines a Rectangle class."""
+
 
 class Rectangle:
-    ''' Rectangle class '''
-        def __init__(self, width=0, height=0):
-            self.width = width
+    """Represent a rectangle."""
+
+    def __init__(self, width=0, height=0):
+        self.width = width
         self.height = height
 
     @property
@@ -42,8 +44,11 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return (0)
         return ((self.__width * 2) + (self.__height * 2))
-    
+
     def __str__(self):
+        """Return the printable representation of the Rectangle.
+        Represents the rectangle with the # character.
+        """
         if self.__width == 0 or self.__height == 0:
             return ("")
 
@@ -53,7 +58,9 @@ class Rectangle:
             if i != self.__height - 1:
                 rect.append("\n")
         return ("".join(rect))
+
     def __repr__(self):
+        """Return the string representation of the Rectangle."""
         rect = "Rectangle(" + str(self.__width)
         rect += ", " + str(self.__height) + ")"
         return (rect)
