@@ -4,7 +4,6 @@
 
 class Rectangle:
     """Represent a rectangle."""
-
     def __init__(self, width=0, height=0):
         ''' Initializes a new Rectangle object'''
         self.width = width
@@ -59,4 +58,3 @@ class Rectangle:
             if i != self.__height - 1:
                 rect.append("\n")
         return ("".join(rect))
-
