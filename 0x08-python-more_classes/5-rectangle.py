@@ -8,7 +8,7 @@ class Rectangle:
         """ """
         self.width = width
         self.height = height
-    
+
     def __del__(self):
         print("Bye rectangle...")
 
