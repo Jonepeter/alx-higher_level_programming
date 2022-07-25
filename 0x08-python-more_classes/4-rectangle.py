@@ -1,10 +1,11 @@
 #!/usr/bin/python3
-''' Print String using __str__ and __repr__'''
+'''Print String using __str__ and __repr__'''
 
 
-class Rectangle:    
-    '''Defines a rectangle class'''
+class Rectangle:
+    """Defines a rectangle class"""
     def __init__(self, width=0, height=0):
+        """ """
         self.width = width
         self.height = height
 
@@ -17,7 +18,8 @@ class Rectangle:
         return s[:-1]
 
     def __repr__(self):
-        return "Rectangle(" + str(self.__width) + ", " + str(self.__height) + ")"
+        return "Rectangle(" + str(self.__width) + \
+            ", " + str(self.__height) + ")"
 
     @property
     def height(self):
