@@ -4,6 +4,7 @@
 
 class Rectangle:
     ''' A rectangle module'''
+
     def __init__(self, width=0, height=0):
         ''' Initializes a new Rectangle object'''
         self.width = width
@@ -12,7 +13,7 @@ class Rectangle:
     @property
     def width(self):
         return self.__width
-    
+
     @width.setter
     def width(self, width):
         if type(width) != int:
@@ -20,10 +21,11 @@ class Rectangle:
         if width < 0:
             raise ValueError('width must be >= 0')
         self.__width = int(width)
+
     @property
     def height(self):
         return self.__height
-    
+
     @height.setter
     def height(self, height):
         if type(height) != int:
