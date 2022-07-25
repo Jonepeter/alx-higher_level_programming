@@ -1,18 +1,23 @@
 #!/usr/bin/python3
-'''Print String using __str__ and __repr__'''
+"""module contains a function.
+"""
 
 
 class Rectangle:
-    """Defines a rectangle class"""
+    """
+    Defines a rectangle
+    """
+    number_of_instances = 0
+
     def __init__(self, width=0, height=0):
-        """ """
         self.width = width
         self.height = height
-        
+
         Rectangle.number_of_instances += 1
 
     def __del__(self):
         print("Bye rectangle...")
+        Rectangle.number_of_instances -= 1
 
     def __str__(self):
         s = ""
