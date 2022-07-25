@@ -9,7 +9,7 @@ class Rectangle:
         ''' Initializes a new Rectangle object'''
         self.width = width
         self.height = height
-    
+
     @property
     def width(self):
         ''' get and set the width of the rectangle'''
