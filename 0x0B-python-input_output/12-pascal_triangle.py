@@ -1,14 +1,14 @@
 #!/usr/bin/python3
-''' Module Input Output'''
+''' Moduae Input Output'''
 
 
 def pascal_triangle(n):
     """
     function.
     """
-    l = []
+    a = []
     if n <= 0:
-        return l
+        return a
     if n == 1:
         return [[1]]
     r = [[1] for i in range(n)]
