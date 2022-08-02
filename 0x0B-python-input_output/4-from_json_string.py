@@ -1,9 +1,5 @@
 #!/usr/bin/python3
-"""Module.
-
-
-
-"""
+''' Module Input Output'''
 import json
 
 
