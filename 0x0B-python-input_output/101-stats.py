@@ -1,33 +1,46 @@
 #!/usr/bin/python3
 ''' Module Input Output'''
-import sys
-ps = __import__('101-func').print_stat
 
 
-d = {
-    "200": 0, "301": 0, "400": 0, "401": 0,
-    "403": 0, "404": 0, "405": 0, "500": 0}
-s = 0
-nbl = 0
-try:
-    for line in sys.stdin:
-        if nbl == 10:
-            ps(s, d)
-            nbl = 1
-        else:
-            nbl += 1
-        line = line.split()
-        try:
-            s += int(line[-1])
-        except Exception:
-            pass
-        try:
-            for k, v in d.items():
-                if k == line[-2]:
-                    d[k] += 1
-        except Exception:
-            pass
-    ps(s, d)
-except KeyboardInterrupt:
-    ps(s, d)
-    raise
+def print_stats(size, status_codes):
+    print("File size: {}".format(size))
+    for key in sorted(status_codes):
+        print("{}: {}".format(key, status_codes[key]))
+
+if __name__ == "__main__":
+    import sys
+
+    size = 0
+    status_codes = {}
+    valid_codes = ['200', '301', '400', '401', '403', '404', '405', '500']
+    count = 0
+
+    try:
+        for line in sys.stdin:
+            if count == 10:
+                print_stats(size, status_codes)
+                count = 1
+            else:
+                count += 1
+
+            line = line.split()
+
+            try:
+                size += int(line[-1])
+            except (IndexError, ValueError):
+                pass
+
+            try:
+                if line[-2] in valid_codes:
+                    if status_codes.get(line[-2], -1) == -1:
+                        status_codes[line[-2]] = 1
+                    else:
+                        status_codes[line[-2]] += 1
+            except IndexError:
+                pass
+
+        print_stats(size, status_codes)
+
+    except KeyboardInterrupt:
+        print_stats(size, status_codes)
+        raise
