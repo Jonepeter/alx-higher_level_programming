@@ -1,9 +1,5 @@
 #!/usr/bin/python3
-"""Module.
-
-
-
-"""
+''' Module Input Output'''
 
 
 class Student:
@@ -15,8 +11,21 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-    def to_json(self):
+    def to_json(self, attrs=None):
         """
         retrieve dict.
         """
+        x = {}
+        if type(attrs) is list and all([isinstance(x, str) for x in attrs]):
+            for i in attrs:
+                if hasattr(self, i):
+                    x[i] = str(getattr(self, i))
+            return x
         return self.__dict__
+
+    def reload_from_json(self, json):
+        """
+        function.
+        """
+        for i, j in json.items():
+            setattr(self, i, j)
