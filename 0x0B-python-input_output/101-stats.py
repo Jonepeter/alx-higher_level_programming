@@ -1,15 +1,17 @@
 #!/usr/bin/python3
 ''' Module Input Output'''
+import sys
 
 
 def print_stats(size, status_codes):
+    ''' Print statistics'''
     print("File size: {}".format(size))
     for key in sorted(status_codes):
         print("{}: {}".format(key, status_codes[key]))
 
-if __name__ == "__main__":
-    import sys
 
+if __name__ == "__main__":
+      
     size = 0
     status_codes = {}
     valid_codes = ['200', '301', '400', '401', '403', '404', '405', '500']
