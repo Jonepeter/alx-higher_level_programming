@@ -1,9 +1,5 @@
 #!/usr/bin/python3
-"""Module.
-
-
-
-"""
+''' Module Input Output'''
 import sys
 ps = __import__('101-func').print_stat
 
