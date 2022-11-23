@@ -1,2 +1,1 @@
-#Java Script web j-query
-#=======================
+Java Script web j-query
